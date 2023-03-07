@@ -5,6 +5,7 @@ from .builder import (build, build_backbone, build_component, build_loss,
                       build_model)
 from .common import *  # noqa: F401, F403
 from .components import *  # noqa: F401, F403
+from .dehazers import *
 from .extractors import LTE, FeedbackHourglass
 from .inpaintors import (AOTInpaintor, DeepFillv1Inpaintor, GLInpaintor,
                          OneStageInpaintor, PConvInpaintor, TwoStageInpaintor)
