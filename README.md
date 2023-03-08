@@ -62,9 +62,14 @@ Please refer to [MMEditing Installation](https://github.com/open-mmlab/mmediting
 [//]: # (## Getting Started)
 
 
+## Results
+
+For the [REVIDE](https://github.com/BookerDeWitt/REVIDE_Dataset) dataset, the visual results of MAP-Net can be downloaded [here](https://drive.google.com/file/d/1rY8TZMQJhrbzg-qWBPl1jhROfHBU1783/view?usp=share_link).
+
+
 ## Acknowledgement
 
-This repository is built using the [mmedit (v1.0.0rc6)](https://github.com/open-mmlab/mmediting/tree/1.x)
+This repository is built using the [mmedit](https://github.com/open-mmlab/mmediting/releases/tag/v1.0.0rc6)
 and [mmseg](https://github.com/open-mmlab/mmsegmentation) toolboxes,
 [DAT](https://github.com/LeapLabTHU/DAT)
 and [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) repositories.
@@ -86,4 +91,5 @@ If you find this repository helpful to your research, please consider citing the
 
 ## License
 
-This project is released under the [Apache 2.0 license](./LICENSE).
+This project is released under the [MIT license](./LICENSE).
+Please refer to the acknowledged repositories for their licenses.
