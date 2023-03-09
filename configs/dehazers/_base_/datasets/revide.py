@@ -32,7 +32,7 @@ train_pipeline = [
          flag='unchanged',
          **load_kwargs),
     dict(type='RescaleToZeroOne', keys=['lq', 'gt']),
-    dict(type='ResizeVideo', keys=['lq', 'gt'], scale=(0.25, 0.375, 0.5, 0.625, 0.75), sample=False),
+    dict(type='ResizeVideo', keys=['lq', 'gt'], scales=[0.25, 0.375, 0.5, 0.625, 0.75], sample=False),
     dict(type='Normalize',
          keys=['lq'],
          **img_norm_cfg_lq),
@@ -63,7 +63,7 @@ test_pipeline = [
          flag='unchanged',
          **load_kwargs),
     dict(type='RescaleToZeroOne', keys=['lq', 'gt']),
-    dict(type='ResizeVideo', keys=['lq'], scale=0.5),  # TODO: trick?
+    dict(type='ResizeVideo', keys=['lq'], scales=0.5),  # TODO: trick?
     dict(type='Normalize',
          keys=['lq'],
          **img_norm_cfg_lq),

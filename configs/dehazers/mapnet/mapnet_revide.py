@@ -1,5 +1,5 @@
 _base_ = [
-    '../_base_/datasets/revide_video.py',
+    '../_base_/datasets/revide.py',
     '../_base_/default_runtime.py', './mapnet_runtime.py',
     '../_base_/schedules/schedule_80k_eval.py'
 ]

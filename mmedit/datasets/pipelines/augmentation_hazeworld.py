@@ -1,6 +1,7 @@
 # https://github.com/open-mmlab/mmediting/blob/master/mmedit/datasets/pipelines/augmentation.py
 import os
 import os.path as osp
+import random
 
 import numpy as np
 import mmcv
@@ -93,4 +94,65 @@ class GenerateFileIndices:
     def __repr__(self):
         repr_str = self.__class__.__name__
         repr_str += (f'(interval_list={self.interval_list})')
+        return repr_str
+
+
+@PIPELINES.register_module()
+class ResizeVideo:
+    """Resize the 720p image to 480p"""
+
+    def __init__(self,
+                 keys,
+                 scales=None,
+                 sample=False,
+                 interpolation='bilinear',
+                 backend=None):
+        assert keys, 'Keys should not be empty.'
+        self.keys = keys
+        if not isinstance(scales, (list, tuple)):
+            scales = [scales]
+        self.scales = scales
+        self.sample = sample
+        if sample:
+            assert scales is not None
+            self.scales = [np.min(scales), np.max(scales)]
+        self.interpolation = interpolation
+        self.backend = backend
+
+    def _resize(self, img, scale=None):
+        h, w, _ = img.shape
+        img, self.scale_factor = mmcv.imrescale(
+            img,
+            scale,
+            return_scale=True,
+            interpolation=self.interpolation,
+            backend=self.backend)
+        if len(img.shape) == 2:
+            img = np.expand_dims(img, axis=2)
+        return img
+
+    def __call__(self, results):
+        if self.sample:
+            scale = np.random.uniform(self.scales[0], self.scales[1])
+        else:
+            scale = random.choice(self.scales)
+        for key in self.keys:
+            if isinstance(results[key], list):
+                results[key] = [
+                    self._resize(v, scale) for v in results[key]
+                ]
+            else:
+                results[key] = self._resize(results[key], scale)
+
+        results['scale_factor'] = self.scale_factor
+        results['interpolation'] = self.interpolation
+        results['backend'] = self.backend
+
+        return results
+
+    def __repr__(self):
+        repr_str = self.__class__.__name__
+        repr_str += (
+            f'(keys={self.keys}, size_factor={self.size_factor}, '
+            f'interpolation={self.interpolation})')
         return repr_str
