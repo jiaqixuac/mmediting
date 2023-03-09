@@ -133,3 +133,6 @@ mmedit/.mim
 
 # MacOS
 .DS_Store
+
+# by jqxu
+scripts/
