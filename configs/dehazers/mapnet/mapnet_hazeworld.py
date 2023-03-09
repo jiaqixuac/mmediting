@@ -1,6 +1,6 @@
 _base_ = [
     '../_base_/datasets/hazeworld.py',
-    '../_base_/default_runtime.py', './map_runtime.py',
+    '../_base_/default_runtime.py', './mapnet_runtime.py',
     '../_base_/schedules/schedule_40k.py'
 ]
 

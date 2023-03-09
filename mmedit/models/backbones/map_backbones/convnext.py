@@ -211,8 +211,9 @@ class ConvNeXt(BaseModule):
                  out_indices=-1,
                  frozen_stages=0,
                  gap_before_final_norm=True,
-                 with_cp=False):
-        super().__init__()
+                 with_cp=False,
+                 init_cfg=None):
+        super().__init__(init_cfg=init_cfg)
 
         if isinstance(arch, str):
             assert arch in self.arch_settings, \
