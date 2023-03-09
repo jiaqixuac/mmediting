@@ -1,6 +1,6 @@
 # MAP-Net
 
-PyTorch implementation of the paper **MAP-Net**, from the following paper:
+PyTorch implementation of **MAP-Net**, from the following paper:
 
 [Video Dehazing via a Multi-Range Temporal Alignment Network with Physical Prior](). CVPR 2023.\
 Jiaqi Xu, Xiaowei Hu, Lei Zhu, Qi Dou, Jifeng Dai, Yu Qiao, Pheng-Ann Heng
@@ -59,8 +59,28 @@ pip3 install -e .
 
 Please refer to [MMEditing Installation](https://github.com/open-mmlab/mmediting/blob/master/docs/en/install.md) for more detailed instruction.
 
-[//]: # (## Getting Started)
 
+## Getting Started
+
+You can train MAP-Net on HazeWorld using the below command with 4 GPUs:
+
+```shell
+bash tools/dist_train.sh configs/dehazers/mapnet/mapnet_hazeworld.py 4
+```
+
+
+## Evaluation
+
+We mainly use [psnr and ssim](./mmedit/core/evaluation/metrics.py) to measure the model performance.
+
+For HazeWorld, we compute the dataset-averaged video-level metrics;
+see the [*evaluate*](./mmedit/datasets/hw_folder_multiple_gt_dataset.py) function.
+
+You can use the following command with your trained models `xxx.pth` for testing:
+
+```shell
+bash tools/dist_test.sh configs/dehazers/mapnet/mapnet_hazeworld.py xxx.pth 1
+```
 
 ## Results
 
@@ -80,7 +100,7 @@ and [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) repo
 If you find this repository helpful to your research, please consider citing the following:
 
 ```bibtex
-@inproceedings{xu2023video,
+@inproceedings{xu2023map,
   title     = {Video Dehazing via a Multi-Range Temporal Alignment Network with Physical Prior},
   author    = {Jiaqi Xu and Xiaowei Hu and Lei Zhu and Qi Dou and Jifeng Dai and Yu Qiao and Pheng-Ann Heng},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
