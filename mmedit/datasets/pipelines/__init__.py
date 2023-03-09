@@ -6,10 +6,12 @@ from .augmentation import (BinarizeImage, ColorJitter, CopyValues, Flip,
                            Quantize, RandomAffine, RandomJitter,
                            RandomMaskDilation, RandomTransposeHW, Resize,
                            TemporalReverse, UnsharpMasking)
+from .augmentation_hazeworld import GenerateFileIndices
 from .compose import Compose
 from .crop import (Crop, CropAroundCenter, CropAroundFg, CropAroundUnknown,
                    CropLike, FixedCrop, ModCrop, PairedRandomCrop,
                    RandomResizedCrop)
+from .crop_hazeworld import PairedRandomCropWithTransmission
 from .formating import (Collect, FormatTrimap, GetMaskedImage, ImageToTensor,
                         ToTensor)
 from .generate_assistant import GenerateCoordinateAndCell, GenerateHeatmap
@@ -43,5 +45,6 @@ __all__ = [
     'CropLike', 'GenerateHeatmap', 'MATLABLikeResize', 'CopyValues',
     'Quantize', 'RandomBlur', 'RandomJPEGCompression', 'RandomNoise',
     'DegradationsWithShuffle', 'RandomResize', 'UnsharpMasking',
-    'RandomVideoCompression'
+    'RandomVideoCompression',
+    'GenerateFileIndices', 'PairedRandomCropWithTransmission'
 ]

@@ -1,5 +1,6 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 from .base_dataset import BaseDataset
+from .base_dh_dataset import BaseDHDataset
 from .base_generation_dataset import BaseGenerationDataset
 from .base_matting_dataset import BaseMattingDataset
 from .base_sr_dataset import BaseSRDataset
@@ -9,6 +10,7 @@ from .comp1k_dataset import AdobeComp1kDataset
 from .dataset_wrappers import RepeatDataset
 from .generation_paired_dataset import GenerationPairedDataset
 from .generation_unpaired_dataset import GenerationUnpairedDataset
+from .hw_folder_multiple_gt_dataset import HWFolderMultipleGTDataset
 from .img_inpainting_dataset import ImgInpaintingDataset
 from .registry import DATASETS, PIPELINES
 from .sr_annotation_dataset import SRAnnotationDataset
@@ -30,7 +32,8 @@ from .vfi_vimeo90k_dataset import VFIVimeo90KDataset
 
 __all__ = [
     'DATASETS', 'PIPELINES', 'build_dataset', 'build_dataloader',
-    'BaseDataset', 'BaseMattingDataset', 'ImgInpaintingDataset',
+    'BaseDataset', 'BaseDHDataset', 'HWFolderMultipleGTDataset',
+    'BaseMattingDataset', 'ImgInpaintingDataset',
     'AdobeComp1kDataset', 'SRLmdbDataset', 'SRFolderDataset',
     'SRAnnotationDataset', 'BaseSRDataset', 'RepeatDataset', 'SRREDSDataset',
     'SRVimeo90KDataset', 'BaseGenerationDataset', 'GenerationPairedDataset',
