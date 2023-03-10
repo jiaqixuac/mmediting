@@ -1,9 +1,9 @@
-# MAP-Net
+# [MAP-Net]()
 
 PyTorch implementation of **MAP-Net**, from the following paper:
 
 [Video Dehazing via a Multi-Range Temporal Alignment Network with Physical Prior](). CVPR 2023.\
-Jiaqi Xu, Xiaowei Hu, Lei Zhu, Qi Dou, Jifeng Dai, Yu Qiao, Pheng-Ann Heng
+Jiaqi Xu, Xiaowei Hu, Lei Zhu, Qi Dou, Jifeng Dai, Yu Qiao, and Pheng-Ann Heng
 
 <p align="center">
 <img src="./docs/image/map_net.jpg" height=100% height=100% 
@@ -22,6 +22,7 @@ class="center">
 
 We construct a large-scale outdoor video dehazing benchmark dataset, **HazeWorld**, which contains video frames in various real-world scenarios.
 
+To prepare the HazeWorld dataset for experiments, please follow the instructions [here](./docs/dataset_prepare.md).
 
 ## Installation
 
@@ -53,7 +54,7 @@ Install MAP-Net from source.
 
 ```shell
 git clone https://github.com/jiaqixuac/MAP-Net.git
-cd mmediting
+cd MAP-Net
 pip3 install -e .
 ```
 
@@ -72,11 +73,10 @@ bash tools/dist_train.sh configs/dehazers/mapnet/mapnet_hazeworld.py 4
 ## Evaluation
 
 We mainly use [psnr and ssim](./mmedit/core/evaluation/metrics.py) to measure the model performance.
-
 For HazeWorld, we compute the dataset-averaged video-level metrics;
 see the [*evaluate*](./mmedit/datasets/hw_folder_multiple_gt_dataset.py) function.
 
-You can use the following command with your trained models `xxx.pth` for testing:
+You can use the following command with 1 GPU to test your trained model `xxx.pth`:
 
 ```shell
 bash tools/dist_test.sh configs/dehazers/mapnet/mapnet_hazeworld.py xxx.pth 1
@@ -92,7 +92,7 @@ For the [REVIDE](https://github.com/BookerDeWitt/REVIDE_Dataset) dataset, the vi
 This repository is built using the [mmedit](https://github.com/open-mmlab/mmediting/releases/tag/v1.0.0rc6)
 and [mmseg](https://github.com/open-mmlab/mmsegmentation) toolboxes,
 [DAT](https://github.com/LeapLabTHU/DAT)
-and [Deformable DETR](https://github.com/fundamentalvision/Deformable-DETR) repositories.
+and [STM](https://github.com/seoungwugoh/STM) repositories.
 
 
 ## Citation
