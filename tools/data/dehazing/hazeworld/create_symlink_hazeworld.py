@@ -5,6 +5,7 @@ Also create the meta info.
 import argparse
 import os
 import os.path as osp
+import shutil
 
 
 def parse_args():
@@ -37,6 +38,7 @@ if __name__ == "__main__":
 
     if args.dataset == 'all':
         datasets = os.listdir(gt_dir)
+        datasets.sort()
         datasets = [x for x in datasets if x in ('Cityscapes', 'DDAD', 'UA-DETRAC', 'VisDrone', 'DAVIS', 'REDS')]
     else:
         datasets = [args.dataset]
@@ -84,8 +86,6 @@ if __name__ == "__main__":
             folders.sort()
             for folder in folders:
                 beta = folder.split('_')[-1]
-                if beta == '0.06':
-                    continue
 
                 num_files = len(os.listdir(osp.join(hazy_dir, dataset, split, folder)))
 

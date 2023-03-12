@@ -27,6 +27,7 @@ if __name__ == '__main__':
     assert osp.isdir(root)
 
     datasets = os.listdir(osp.join(root, split, 'gt'))
+    datasets.sort()
     print(f"\n[HazeWorld-{split}]\tDatasets ({len(datasets)}): {datasets}\n")
 
     data_infos = {}
