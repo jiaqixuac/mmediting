@@ -31,7 +31,7 @@ if __name__ == "__main__":
     hazy_dir = osp.realpath(args.hazy_dir)
     trans_dir = osp.realpath(args.trans_dir)
 
-    print(f"\nRoot:\t\t\t{root}")
+    print(f"\nHazeWorld root:\t\t{root}")
     print(f"GT dir:\t\t\t{gt_dir}")
     print(f"Hazy dir:\t\t{hazy_dir}")
     print(f"Transmission dir:\t{trans_dir}\n")
@@ -87,13 +87,13 @@ if __name__ == "__main__":
             for folder in folders:
                 beta = folder.split('_')[-1]
 
-                num_files = len(os.listdir(osp.join(hazy_dir, dataset, split, folder)))
+                num_files = len(os.listdir(osp.join(hazy_dir, dataset, split, folder)))  # num files in hazy
 
                 # link gt folder
                 prefix = '_'.join(folder.split('_')[:-2])
                 src = osp.join(gt_dir, dataset, split, prefix)
                 dst = osp.join(root, dst_split, 'gt', dataset, folder)
-                assert osp.isdir(src), f"gt: {src}"
+                assert osp.isdir(src), f"No gt dir: {src}"
                 assert len(os.listdir(src)) == num_files, f'{src}: {len(os.listdir(src))}, {num_files}'
                 if not osp.isdir(dst):
                     os.symlink(src, dst)
@@ -101,8 +101,8 @@ if __name__ == "__main__":
                 # link hazy folder
                 src = osp.join(hazy_dir, dataset, split, folder)
                 dst = osp.join(root, dst_split, 'hazy', dataset, folder)
-                assert osp.isdir(src), f"hazy: {src}"
-                assert len(os.listdir(src)) == num_files
+                assert osp.isdir(src), f"No hazy dir: {src}"
+                assert len(os.listdir(src)) == num_files, f'{src}: {len(os.listdir(src))}, {num_files}'
                 if not osp.isdir(dst):
                     os.symlink(src, dst)
 
@@ -110,7 +110,7 @@ if __name__ == "__main__":
                 prefix = '_'.join(folder.split('_')[:-2]) + f'_{beta}'
                 src = osp.join(trans_dir, dataset, split, prefix)
                 dst = osp.join(root, dst_split, 'transmission', dataset, folder)
-                assert osp.isdir(src), f"transmission: {src}"
+                assert osp.isdir(src), f"No transmission dir: {src}"
                 assert len(os.listdir(src)) == num_files, f'{src}: {len(os.listdir(src))}, {num_files}'
                 if not osp.isdir(dst):
                     os.symlink(src, dst)
@@ -140,6 +140,8 @@ if __name__ == "__main__":
         with open(osp.join(root, 'test', f'meta_info_GT_{dataset}.txt'), 'w') as f:
             f.writelines(test_meta)
 
+    print(f"\n[HazeWorld Train]\t{len(meta_info_train)}")
+    print(f"[HazeWorld Test ]\t{len(meta_info_test)}")
     with open(osp.join(root, 'train', f'meta_info_GT_train.txt'), 'w') as f:
         f.writelines(meta_info_train)
     with open(osp.join(root, 'test', f'meta_info_GT_test.txt'), 'w') as f:
