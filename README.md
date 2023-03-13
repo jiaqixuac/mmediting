@@ -88,7 +88,8 @@ Demo for the real-world hazy videos.
 
 https://user-images.githubusercontent.com/33066765/224627919-cdc91886-9ab3-4b51-873b-3596c4aea085.mp4
 
-For the [REVIDE](https://github.com/BookerDeWitt/REVIDE_Dataset) dataset, the visual results of MAP-Net can be downloaded [here](https://www.cse.cuhk.edu.hk/~jqxu/data/visual_results_MAP-Net_REVIDE.zip).
+For the [REVIDE](https://github.com/BookerDeWitt/REVIDE_Dataset) dataset,
+the visual results of MAP-Net can be downloaded [here](https://appsrv.cse.cuhk.edu.hk/~jqxu/data/visual_results_MAP-Net_REVIDE.zip).
 
 
 ## Acknowledgement
