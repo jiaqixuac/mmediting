@@ -6,8 +6,8 @@ PyTorch implementation of **MAP-Net**, from the following paper:
 Jiaqi Xu, Xiaowei Hu, Lei Zhu, Qi Dou, Jifeng Dai, Yu Qiao, and Pheng-Ann Heng
 
 <p align="center">
-<img src="./docs/image/map_net.jpg" height=100% height=100% 
-class="center">
+<img src="./docs/image/map_net.jpg"
+     class="center">
 </p>
 
 We propose **MAP-Net**, a novel video dehazing framework that effectively explores the physical haze priors and aggregates temporal information.
@@ -16,8 +16,8 @@ We propose **MAP-Net**, a novel video dehazing framework that effectively explor
 ## Dataset
 
 <p align="center">
-<img src="./docs/image/haze_world.jpg" height=100% height=100% 
-class="center">
+<img src="./docs/image/haze_world.jpg"
+     class="center">
 </p>
 
 We construct a large-scale outdoor video dehazing benchmark dataset, **HazeWorld**, which contains video frames in various real-world scenarios.
