@@ -84,7 +84,7 @@ bash tools/dist_test.sh configs/dehazers/mapnet/mapnet_hazeworld.py xxx.pth 1
 
 ## Results
 
-For the [REVIDE](https://github.com/BookerDeWitt/REVIDE_Dataset) dataset, the visual results of MAP-Net can be downloaded [here](https://drive.google.com/file/d/1rY8TZMQJhrbzg-qWBPl1jhROfHBU1783/view?usp=share_link).
+For the [REVIDE](https://github.com/BookerDeWitt/REVIDE_Dataset) dataset, the visual results of MAP-Net can be downloaded [here](https://appsrv.cse.cuhk.edu.hk/~jqxu/data/visual_results_MAP-Net_REVIDE.zip).
 
 
 ## Acknowledgement

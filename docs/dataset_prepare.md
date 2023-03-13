@@ -106,7 +106,7 @@ python tools/data/dehazing/hazeworld/create_symlink_hazeworld.py
 
 The data could be found [here](https://www.cityscapes-dataset.com/downloads/) after registration.
 Download [*leftImg8bit_sequence_trainvaltest.zip (324GB)*](https://www.cityscapes-dataset.com/file-handling/?packageID=14).
-The used videos can be found in [mapping_hazeworld_cityscapes.txt]().
+The used videos can be found in [mapping_hazeworld_cityscapes.txt](https://drive.google.com/file/d/13IZPyeB64lu3szOJsihSPGyUx9cK6yb8/view?usp=share_link).
 
 ```shell
 python tools/data/dehazing/hazeworld/preprocess_hazeworld_cityscapes.py \
