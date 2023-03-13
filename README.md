@@ -86,7 +86,7 @@ bash tools/dist_test.sh configs/dehazers/mapnet/mapnet_hazeworld.py xxx.pth 1
 
 Demo for the real-world hazy videos.
 
-https://user-images.githubusercontent.com/33066765/224602014-93785fdd-2bc3-4904-b423-67cafe08699c.mp4
+https://user-images.githubusercontent.com/33066765/224627919-cdc91886-9ab3-4b51-873b-3596c4aea085.mp4
 
 For the [REVIDE](https://github.com/BookerDeWitt/REVIDE_Dataset) dataset, the visual results of MAP-Net can be downloaded [here](https://www.cse.cuhk.edu.hk/~jqxu/data/visual_results_MAP-Net_REVIDE.zip).
 
