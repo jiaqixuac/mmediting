@@ -22,7 +22,7 @@ We propose **MAP-Net**, a novel video dehazing framework that effectively explor
 
 We construct a large-scale outdoor video dehazing benchmark dataset, **HazeWorld**, which contains video frames in various real-world scenarios.
 
-To prepare the HazeWorld dataset for experiments, please follow the instructions [here](./docs/dataset_prepare.md).
+To prepare the HazeWorld dataset for experiments, please follow the [instructions](./docs/dataset_prepare.md).
 
 ## Installation
 
