@@ -92,8 +92,8 @@ Download the data from the links at the bottom.
 Since many hazy videos may correspond to one ground-truth video, we adopt the file structure above to save storage.
 
 **Step 2.**
-~~Download the [meta files]() and put them into the corresponding locations (see above).~~
-The meta files are provided in the HazeWorld [download link]().
+~~Download the [meta files](https://www.cse.cuhk.edu.hk/~jqxu/data/HazeWorld_meta-files.zip) and put them into the corresponding locations (see above).~~
+The meta files are provided in the HazeWorld [download link](https://www.cse.cuhk.edu.hk/~jqxu/data/HazeWorld.zip).
 
 **Step 3.**
 Symlink the **train** and **test** split using the [script](../tools/data/dehazing/hazeworld/create_symlink_hazeworld.py) and the following command:
@@ -116,7 +116,7 @@ python tools/data/dehazing/hazeworld/preprocess_hazeworld_cityscapes.py \
 
 ### Others
 
-For others, we provide the [processed data]().
+For others, we provide the [processed data](https://www.cse.cuhk.edu.hk/~jqxu/data/HazeWorld.zip).
 You can also refer to their official websites for the original data.
 
 ### Notes
