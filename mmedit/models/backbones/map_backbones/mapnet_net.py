@@ -340,7 +340,7 @@ class MAPNet(BaseModule):
 
         return feats
 
-    def forward(self, lqs, gt=None):
+    def forward(self, lqs):
         """
         Forward function
 
