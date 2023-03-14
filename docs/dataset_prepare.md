@@ -116,7 +116,7 @@ python tools/data/dehazing/hazeworld/preprocess_hazeworld_cityscapes.py \
 
 ### Others
 
-For others, we provide the [processed data](https://appsrv.cse.cuhk.edu.hk/~jqxu/data/HazeWorld.zip).
+For others, we provide the [processed data (~100GB)](https://appsrv.cse.cuhk.edu.hk/~jqxu/data/HazeWorld.zip).
 You can also refer to their official websites for the original data.
 
 ### Notes
